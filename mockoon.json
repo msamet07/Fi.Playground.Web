@@ -1,0 +1,298 @@
+{
+  "uuid": "82d42ca0-0f16-4d05-9a29-eac58be10b8a",
+  "lastMigration": 32,
+  "name": "Demo API (copy)",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "41b3f0f5-9e82-4d41-be90-57fac1f89a96",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/Ticket/Ticket",
+      "responses": [
+        {
+          "uuid": "0cb1caa6-a93c-4874-ad8e-c089ad612797",
+          "body": "{\n  \"Success\": true,\n  \"BusinessKey\": \"\",\n  \"MessageKey\": \"\",\n  \"SagaOperationStatus\": 1,\n  \"Additional\": {},\n  \"ExecutionTrace\": \"\",\n  \"Reasons\":{},\n  \"Value\": [\n    {\n      \"Id\": 1,\n      \"Name\": \"Mustafa\",\n      \"Surname\": \"Dinç\",\n      \"Age\": 31,\n      \"IdNumber\": \"12345678912\",\n      \"Description\": \"Neden bu kadar güzel yaptınız bu uygulamayı?\",\n      \"Address\": \"Kepez/Antalya\",\n      \"Code\": \"MSD0701\",\n      \"Status\": 3\n    },\n    {\n      \"Id\": 2,\n      \"Name\": \"Demir\",\n      \"Surname\": \"Dinç\",\n      \"Age\": 56,\n      \"IdNumber\": \"12312312352\",\n      \"Description\": \"Mobil bankacılık uygulamasına giremiyorum!\",\n      \"Address\": \"İstanbul\",\n      \"Code\": \"MSD0702\",\n      \"Status\": 2\n    }, \n    {\n      \"Id\": 3,\n      \"Name\": \"Bilge Deniz\",\n      \"Surname\": \"Dinç\",\n      \"Age\": 18,\n      \"IdNumber\": \"44156012377\",\n      \"Description\": \"18 yaşına yeni girdim ve hesap açmak istiyorum.\",\n      \"Address\": \"Balıkesir\",\n      \"Code\": \"MSD0703\",\n      \"Status\": 2\n    }, \n    {\n      \"Id\": 4,\n      \"Name\": \"Mehtap\",\n      \"Surname\": \"Dinç\",\n      \"Age\": 28,\n      \"IdNumber\": \"43318478962\",\n      \"Description\": \"Ek hesap limitimin arttırılmasını istiyorum.\",\n      \"Address\": \"Kepez/Antalya\",\n      \"Code\": \"MSD0704\",\n      \"Status\": 3\n    }, \n    {\n      \"Id\": 5,\n      \"Name\": \"Dürdane\",\n      \"Surname\": \"Meşe\",\n      \"Age\": 38,\n      \"IdNumber\": \"11118478962\",\n      \"Description\": \"Çalışıp çalışmadığını deniyorum.\",\n      \"Address\": \"Muğla\",\n      \"Code\": \"MSD0705\",\n      \"Status\": 3\n    }, \n    {\n      \"Id\": 6,\n      \"Name\": \"Mehdi\",\n      \"Surname\": \"Vekil\",\n      \"Age\": 58,\n      \"IdNumber\": \"43318478962\",\n      \"Description\": \"Hayvanlara 1 kap su\",\n      \"Address\": \"Bolu\",\n      \"Code\": \"MSD0705\",\n      \"Status\": 3\n    }, \n    {\n      \"Id\": 7,\n      \"Name\": \"Musa\",\n      \"Surname\": \"Firavundöven\",\n      \"Age\": 55,\n      \"IdNumber\": \"42458478962\",\n      \"Description\": \"Her Firavunun bir Musa'sı Varmıdır?\",\n      \"Address\": \"Hatay\",\n      \"Code\": \"MSD0707\",\n      \"Status\": 1\n    }, \n    {\n      \"Id\": 8,\n      \"Name\": \"Aşık\",\n      \"Surname\": \"Veysel\",\n      \"Age\": 78,\n      \"IdNumber\": \"884147962455\",\n      \"Description\": \"Yaşlılık aylığım yatmamış\",\n      \"Address\": \"Mardin\",\n      \"Code\": \"MSD0708\",\n      \"Status\": 3\n    }, \n    {\n      \"Id\": 9,\n      \"Name\": \"Davut\",\n      \"Surname\": \"Tataroğlu\",\n      \"Age\": 45,\n      \"IdNumber\": \"43389477962\",\n      \"Description\": \"Mevzu derin\",\n      \"Address\": \"İstanbul\",\n      \"Code\": \"MSD0709\",\n      \"Status\": 3\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "e377b20f-20d0-4dcc-b38b-25da3990fd0d",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "api/v1/Ticket/Ticket",
+      "responses": [
+        {
+          "uuid": "d37c86de-26a2-4ddb-a885-5611d7f31a00",
+          "body": "{\n  \"Success\": true,\n  \"BusinessKey\": \"\",\n  \"MessageKey\": \"\",\n  \"SagaOperationStatus\": 1,\n  \"Additional\": {},\n  \"ExecutionTrace\": \"\",\n  \"Reasons\":{},\n  \"Value\": {\n    \"Code\":\"RVVDRT\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "df3b3721-0a41-4a93-a553-73e8ba654cc6",
+      "type": "http",
+      "documentation": "",
+      "method": "put",
+      "endpoint": "api/v1/Ticket/Ticket/:id",
+      "responses": [
+        {
+          "uuid": "a899dd1e-2db9-4da4-981e-ddb8bd405233",
+          "body": "{\n  \"Success\": true,\n  \"BusinessKey\": \"\",\n  \"MessageKey\": \"\",\n  \"SagaOperationStatus\": 1,\n  \"Additional\": {},\n  \"ExecutionTrace\": \"\",\n  \"Reasons\":{},\n  \"Value\": {}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "9caa1395-d206-4fdf-8cc3-d035d4db6b88",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/Ticket/TicketResponse",
+      "responses": [
+        {
+          "uuid": "8a88ab3a-21b4-4d06-86f7-ea3cf9cdc33b",
+          "body": "{\n  \"Success\": true,\n  \"BusinessKey\": \"\",\n  \"MessageKey\": \"\",\n  \"SagaOperationStatus\": 1,\n  \"Additional\": {},\n  \"ExecutionTrace\": \"\",\n  \"Reasons\":{},\n  \"Value\": [\n    {\n      \"Id\": 1,\n      \"Name\": \"Samet\",\n      \"Surname\": \"Dinç\",\n      \"Age\": 31,\n      \"IdNumber\": \"12345678912\",\n      \"Description\": \"Bu bir başvurudur.\",\n      \"Address\": \"Kepez/Antalya\",\n      \"Code\": \"TSDFSGR\",\n      \"Status\": 3\n    }  \n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "0cdd4a43-31d3-4ea5-9cae-60c04e6eda22",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "api/v1/Ticket/TicketResponse",
+      "responses": [
+        {
+          "uuid": "e24749ed-79e1-44a0-bb82-3369494f3b44",
+          "body": "{\n  \"Success\": true,\n  \"BusinessKey\": \"\",\n  \"MessageKey\": \"\",\n  \"SagaOperationStatus\": 1,\n  \"Additional\": {},\n  \"ExecutionTrace\": \"\",\n  \"Reasons\":{},\n  \"Value\": {}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "c43d87c5-54f9-44ee-8bb2-9a590d8910d3",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/Ticket/Ticket/ByTicketCode/:TicketCode",
+      "responses": [
+        {
+          "uuid": "ca6121a1-33d7-4105-9e22-597bbe67da45",
+          "body": "{\n  \"Success\": true,\n  \"BusinessKey\": \"\",\n  \"MessageKey\": \"\",\n  \"SagaOperationStatus\": 1,\n  \"Additional\": {},\n  \"ExecutionTrace\": \"\",\n  \"Reasons\":{},\n  \"Value\": [\n    {\n      \"Id\": 1,\n      \"Name\": \"Samet\",\n      \"Surname\": \"Dinç\",\n      \"Age\": 31,\n      \"IdNumber\": \"12345678912\",\n      \"Description\": \"Bu bir başvurudur.\",\n      \"Address\": \"Kepez/Antalya\",\n      \"Code\": \"RVVDRT\",\n      \"Status\": 3\n    }  \n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "9611c071-0e43-4a6c-ba0f-4eedcab29e5a",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/Ticket/TicketResponse/ByTicketId/:id",
+      "responses": [
+        {
+          "uuid": "bf9446cc-a479-4d05-b6ee-a94fa23d13a7",
+          "body": "{\n  \"Success\": true,\n  \"BusinessKey\": \"\",\n  \"MessageKey\": \"\",\n  \"SagaOperationStatus\": 1,\n  \"Additional\": {},\n  \"ExecutionTrace\": \"\",\n  \"Reasons\":{},\n  \"Value\": {\n      \"Id\": 1,\n      \"TicketId\": 1,\n      \"ResponseText\": \"Başvuru talebiniz alınmıştır.\"\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "41b3f0f5-9e82-4d41-be90-57fac1f89a96"
+    },
+    {
+      "type": "route",
+      "uuid": "c43d87c5-54f9-44ee-8bb2-9a590d8910d3"
+    },
+    {
+      "type": "route",
+      "uuid": "e377b20f-20d0-4dcc-b38b-25da3990fd0d"
+    },
+    {
+      "type": "route",
+      "uuid": "df3b3721-0a41-4a93-a553-73e8ba654cc6"
+    },
+    {
+      "type": "route",
+      "uuid": "9611c071-0e43-4a6c-ba0f-4eedcab29e5a"
+    },
+    {
+      "type": "route",
+      "uuid": "9caa1395-d206-4fdf-8cc3-d035d4db6b88"
+    },
+    {
+      "type": "route",
+      "uuid": "0cdd4a43-31d3-4ea5-9cae-60c04e6eda22"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With, F-Commandname, f-uikey, f-clienttime, f-tenantkey"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [
+    {
+      "uuid": "a341523b-304b-4e00-9bd3-6535d55881fc",
+      "id": "49og",
+      "name": "Users",
+      "documentation": "",
+      "value": "[\n  {{#repeat 50}}\n  {\n    \"id\": \"{{faker 'string.uuid'}}\",\n    \"username\": \"{{faker 'internet.userName'}}\"\n  }\n  {{/repeat}}\n]"
+    }
+  ],
+  "callbacks": []
+}

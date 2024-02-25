@@ -28,7 +28,7 @@ import { apiUrls } from '../../constants';
  */
 const uiMetadata = {
   moduleName: 'playground',
-  uiKey: 'u7e7c13a018',
+  uiKey: 'u7e7c13a012',
 };
 
 const BasvuruGuncelle = ({ ticketdata,close, Id, ...rest }) => {

@@ -8,5 +8,11 @@
   "Age": "Yaş",
   "Address": "Adres",
   "TicketSubject": "Başvuru Nedeni",
-  "TicketSearch": "Başvuru Kodu"
+  "TicketSearch": "Başvuru Kodu",
+  "Answered":"Cevaplandı",
+  "Unanswered":"Cevaplanmadı",
+  "Unsolved":"Çözülmemiş",
+  "AdminAnswer":"Admin Cevabı",
+  "Info":"Ticket Detail"
+
 }

@@ -51,3 +51,4 @@ export default [
     component: NotFound,
   },
 ];
+//reactın oluşturduğum sayfaları tanıyabilmesi için burada ayarlar yapmamız gerekiyor ki ekranda rander olabilsin.

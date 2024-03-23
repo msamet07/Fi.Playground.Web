@@ -37,8 +37,8 @@ const BasvuruOlustur = ({ close, Id, ...rest }) => {
   const { enqueueSnackbar } = useSnackbar();
 
   const [dataModel, setDataModel] = useState({});
-  const [newTicketCode, setNewTicketCode] = useState("");
-  const [isAlertVis, setIsAlertVis] = useState(false);
+  const [newTicketCode, setNewTicketCode] = useState("");//oluşturduğum state sayesinde setNewTicketCode içinde artık kodum var ve 
+  const [isAlertVis, setIsAlertVis] = useState(false);//basta false olan alertim true oldu. State değiştiği için de sayfa kendisni güncelleyecek ve basta false olan alertim true olup alerti görünür hale getirdim.messageye indiğimde
 
   const basePageRef = useRef();
   const nameRef = useRef();
@@ -52,14 +52,14 @@ const BasvuruOlustur = ({ close, Id, ...rest }) => {
 
   useEffect(() => {
   }, []);
-
-  const onActionClick = (action) => {
-      executePost({
-        url: apiUrls.LocalTicketCreate,
+//executePost,put get hepsi reacthookundan geliyor.Kullanırken biz bunları aslında altyapıdan almış oluyoruz.
+  const onActionClick = (action) => {//hangi butona basıldığını nasıl anlayacağım sorunun cevabı.Burada 1 buton var o yüzden action.command name almasına gerek kalmadı.
+      executePost({ //neden post dedim create ederken bize post lazım.
+        url: apiUrls.LocalTicketCreate,// apileri apiurls içinde topladım. içine baktığım zaman ;
         baseURL: apiUrls.LocalBaseApi,
-        data: {
-          ...dataModel,
-          Name: nameRef.current.value,
+        data: {  //burada ticketinput modelime göre istenilen verileri yazıyorum.ve post ettim.
+          ...dataModel,//şuan içi boş ama altta gönderdiğim verilere ek olarak baska bir veri daha göndermek istersem buraya ekleyip ...data model ve altta  yazdıklarım şeklinde gönderebilirim.
+          Name: nameRef.current.value,//inputun içine yazılan veriyi bu şekilde ref vererek gönderebiliyorum.
           Surname: surnameRef.current.value,
           Age: ageRef.current.value,
           IdNumber: idNumberRef.current.value,
@@ -67,28 +67,28 @@ const BasvuruOlustur = ({ close, Id, ...rest }) => {
           Address: addressRef.current.value,
 
         },
-      }).then((response) => {
+      }).then((response) => {//bir sunucu hatası yoksa buraya düşüyor.
         if (response.Success) {
-          setNewTicketCode(response.Value.Code)
+          setNewTicketCode(response.Value.Code)//response succes ise bana geriye dönen ticketın kodunu oluşturduğum state in valusunu dönüp setIsAlertVis i true ya çekiyor.
           setIsAlertVis(true);
         }
       });
   };
-
+//bütün sayfalarımız basepage den türüyordu.
   return (
     <BasePage
       {...rest}
       ref={basePageRef}
       onActionClick={onActionClick}
       actionList={[
-        { name: 'Save', scopeKey: scopeKeys.Create_Loan },
+        { name: 'Save', scopeKey: scopeKeys.Create_Loan },//sayfanın sağında çıkan butonların isimleri için kullanıyorum.
       ]}
-    >
+    > 
        <Card scopeKey={scopeKeys.Create_Loan}>
           {
-            isAlertVis &&
+            isAlertVis &&//alt taraf true olduğunda gösterecek şekilde bir alert koydum.
             <Alert
-            message={"Başvurunuz oluşturuldu. Başvuru takip kodu: "+newTicketCode}
+            message={"Başvurunuz oluşturuldu. Başvuru takip kodu: "+newTicketCode}//bununda içi doldu ve mesajım geldi ve ürettiğim kodu gösterdi.
             mode="page"
             severity="success"
             visiable={false}
@@ -113,7 +113,7 @@ const BasvuruOlustur = ({ close, Id, ...rest }) => {
             required
             ref={idNumberRef}
             maxLength={11}
-            label={translate('IdNumber')}
+            label={translate('IdNumber')}//çeviri için locals klasörü altında common içinde ayarları var.
             value={dataModel.idnumber}
           />
           <Input

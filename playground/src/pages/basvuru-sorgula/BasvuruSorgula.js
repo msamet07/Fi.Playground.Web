@@ -55,26 +55,27 @@ const BasvuruSorgula = ({ ticketdata, data, id, ...rest }) => {
   const { executeGet, executePost, executePut } = useFiProxy();
 
   useEffect(() => {
-    if(ticketdata != undefined){
+    if(ticketdata != undefined){//ticketdata yoksa basvuru listesi içerisindeki detay görüntüle 
       setIsSearchVis(false)
       setDataModel(ticketdata)
       GetTicketResponse(ticketdata.Id)
     }
-  }, []);
-
+  }, []);//sayfa yüklenirken 1 kere çalış.
+//Bu sayfa 2 şekilde çalışıyor.1 ben bu sayfaya gelir ticketın kodunu yazar ticketı bulursam/ yada basvuru listesi içinde ticket dataya git dersem
+//yukardan ticketdata otomatik dolu gelir,doluysa arama inputunu otomatikman kaldırıyorum gelen data ile ticketım herşeyi otomatik dolduruyor.
   const onActionClick = (action) => {
       executeGet({
         url: apiUrls.LocalTicketByCode+searchRef.current.value,
         baseURL: apiUrls.LocalBaseApi,
       }).then((response) => {
-        if (response.Success) {
+        if (response.Success) {//eğer dolu gelmiş ise
           setDataModel(response.Value[0])
-          setIsSearchVis(false)
-          GetTicketResponse(response.Value[0].Id)
+          setIsSearchVis(false)//searchvis. kapat .data model gelen datamodel olsun 
+          GetTicketResponse(response.Value[0].Id)//ticketın içindeki cevapları id ye göre bana getir doldur.
         }
       });
   };
-
+//sayfayı yeni açtığımda ise yukardaki işlemlerin hiç birisini yapmayacak.
   const GetTicketResponse = (id) => {
     executeGet({
       url: apiUrls.LocalTicketResponseByTicketId+id,

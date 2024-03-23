@@ -11,7 +11,7 @@ import {
 } from 'component/base';
 import { Card, DataGrid, Filter, Input, BasePage, withFormPage } from 'component/ui';
 
-import SampleDefinition from '../sample-definition';
+
 import { apiUrls } from '../../constants';
 import BasvuruSorgula from '../basvuru-sorgula';
 import BasvuruGuncelle from '../../components/basvuru-guncelle';
@@ -35,22 +35,22 @@ const BasvuruListesi = (props) => {
 
   useEffect(() => {
     getDataSource();
-  }, []);
+  }, []);//sayfa yüklenirken yine 1 kere çalışıyor.[] bundan dolayı.
 
   const getDataSource = (data) => {
-    executeGet({
+    executeGet({//bütün datayı get yapıyor ve urllerden alp geliyor.
       url: apiUrls.LocalTicketApi,
       baseURL: apiUrls.LocalBaseApi,
     }).then((response) => {
       if (response.Success) {
-        setDataSource(response.Value)
+        setDataSource(response.Value)//setdatasourcenin içine  ekliyorum.Bütün ticketler artık var.Datasourceyi de gride verdim gridin içi otomatik doluyor.
       }
     });
   };
 
   const columns = useMemo(() => {
     return [
-      { name: 'Id', header: translate('Id'), visible: false },
+      { name: 'Id', header: translate('Id'), visible: false },//id alanım gözükmesin.
       { name: 'Code', header: translate('Code') },
       { name: 'Name', header: translate('Name') },
       { name: 'Status', header: translate('Status') },
@@ -62,21 +62,21 @@ const BasvuruListesi = (props) => {
   const onActionClick = (action) => { };
 
   const editClicked = useCallback((id, data) => {
-    data &&
-      showDialog({
+    data && //yine satır dolu ise 
+      showDialog({//bir popap açtım ve 
         title: translate('Sample edit'),
-        content: <BasvuruGuncelle ticketdata={data} />,
-        callback: () => {
+        content: <BasvuruGuncelle ticketdata={data} />,//basvuru güncelle companentine (neden companent? bu bir sayfa değil boşuna sayfa altına listelemesine gerek yok sadece status ve tickketa cevap yazacağım için bir companent )datayı gönder. 
+        callback: () => { //ticketın en güncel hali için. Popap kapandığı zaman tekrar bütün datayı dolduruyoruz.
           getDataSource();
         },
       });
   }, []);
 
   const infoClicked = useCallback((id, data) => {
-    data &&
-    showDialog({
-      title: translate('Ticket Detail'),
-      content: <BasvuruSorgula ticketdata={data} />,
+    data &&//satır boş değil ise
+    showDialog({//popap açtım ve 
+      title: translate('Ticket Detail'), 
+      content: <BasvuruSorgula ticketdata={data} />,//bu kaydı ticket data olarak basvuru sorgulaya gönder o bana detayını göstersin.
       callback: () => {
       },
     });
@@ -86,19 +86,19 @@ const BasvuruListesi = (props) => {
     () => [
       {
         name: 'info',
-        onClick: infoClicked,
-        scopeKey: scopeKeys.Create_Loan,
+        onClick: infoClicked,//infoya basılınca infoClicked çalışsın,
+        scopeKey: scopeKeys.Create_Loan,//scope key verip herhangi bir düğmeye yetki verebiliriz. Altyapı elimde olmadığı için defoult bastım.
       },
       {
         name: 'edit',
-        onClick: editClicked,
+        onClick: editClicked,//edite basılınca editClicked çalışsın,
         scopeKey: scopeKeys.Create_Loan,
       },
     ],
     [infoClicked, editClicked]
   );
 
-  return (
+  return (//1 tablom olacak 
     <BasePage {...props} onActionClick={onActionClick}>
       <Card
         scopeKey={scopeKeys.View_Loan}
@@ -106,8 +106,8 @@ const BasvuruListesi = (props) => {
       >
         <DataGrid
           dataSource={dataSource}
-          columns={columns}
-          actionList={gridActionList}
+          columns={columns}//tanımladığım kolonlar olacak.Kolonlara bakalım.
+          actionList={gridActionList}//yapabileceğim actionlar.
           idProperty="Id"
         />
       </Card>
